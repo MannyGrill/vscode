@@ -286,7 +286,6 @@ function getNLSConfiguration(locale) {
 					return Promise.all([readFile(path.join(__dirname, 'nls.metadata.json')), readFile(mainPack)]);
 				}).then((values) => {
 					let metadata = JSON.parse(values[0]);
-					let packData = JSON.parse(values[1]).contents;
 					let bundles = Object.keys(metadata.bundles);
 					let writes = [];
 					for (let bundle of bundles) {
